@@ -1,22 +1,23 @@
-Shared Dependencies:
+1. "manifest.json": This file is the metadata for the Chrome extension. It shares the "name", "version", "description", "permissions", "background", "content_scripts", and "browser_action" fields with the other files.
 
-1. Exported Variables:
-   - `comments`: An array that stores the comments for each webpage.
+2. "background.js": This file is the background script for the Chrome extension. It shares the "chrome.runtime.onInstalled", "chrome.runtime.onMessage", "chrome.tabs.executeScript", and "chrome.tabs.query" functions with the other files.
 
-2. Data Schemas:
-   - `CommentSchema`: A schema that defines the structure of a comment, including the webpage URL, the comment text, and the timestamp.
+3. "content.js": This file is the content script for the Chrome extension. It shares the "chrome.runtime.sendMessage", "document.getElementById", "document.createElement", "document.body.appendChild", and "window.getSelection" functions with the other files.
 
-3. ID Names of DOM Elements:
-   - `commentInput`: The input field where users type their comments.
-   - `commentList`: The area where the comments are displayed.
-   - `submitButton`: The button that users click to submit their comments.
+4. "popup.html": This file is the popup HTML for the Chrome extension. It shares the "document.getElementById", "document.createElement", "document.body.appendChild", and "window.getSelection" functions with the other files.
 
-4. Message Names:
-   - `SAVE_COMMENT`: A message sent from `popup.js` to `background.js` to save a comment.
-   - `LOAD_COMMENTS`: A message sent from `popup.js` to `background.js` to load comments for a specific webpage.
+5. "popup.js": This file is the popup script for the Chrome extension. It shares the "chrome.runtime.sendMessage", "document.getElementById", "document.createElement", "document.body.appendChild", and "window.getSelection" functions with the other files.
 
-5. Function Names:
-   - `saveComment()`: A function in `background.js` that saves a comment to the Chrome Storage API.
-   - `loadComments()`: A function in `background.js` that retrieves comments for a specific webpage from the Chrome Storage API.
-   - `displayComments()`: A function in `popup.js` that displays the comments on the extension's user interface.
-   - `submitComment()`: A function in `popup.js` that handles the comment submission process.
+6. "styles.css": This file is the CSS for the Chrome extension. It shares the "body", "button", "img", and "div" selectors with the other files.
+
+7. "sam-hq.js": This file is the SAM-HQ algorithm for the Chrome extension. It shares the "segmentImage", "copyImage", and "pasteImage" functions with the other files.
+
+8. "images/icon.png": This file is the icon for the Chrome extension. It shares the "icon" name with the other files.
+
+9. Shared DOM element IDs: "segmentButton", "copyButton", "pasteButton", "imageContainer".
+
+10. Shared message names: "segmentImage", "copyImage", "pasteImage".
+
+11. Shared function names: "segmentImage", "copyImage", "pasteImage".
+
+12. Shared data schemas: The "imageData" schema, which includes the "url", "width", "height", and "segments" fields.

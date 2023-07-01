@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "Image Segmenter",
+  "version": "1.0",
+  "description": "A Chrome extension that uses the SAM-HQ algorithm to segment web images and allows copying and pasting of the segments.",
+  "icons": {
+    "128": "images/icon.png"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js", "sam-hq.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "images/icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "clipboardWrite",
+    "clipboardRead"
+  ]
+}
